@@ -3,7 +3,7 @@
   import { fade } from "svelte/transition";
 
   const pages = new Map<string, Component>(
-    Object.entries(import.meta.glob("./pages/*.svelte", { eager: true, import: "default" })),
+    Object.entries(import.meta.glob("./pages_lt/*.svelte", { eager: true, import: "default" })),
   );
 
   let page = $state(
@@ -16,7 +16,7 @@
       return Number.isFinite(pn) ? pn : 0;
     })(),
   );
-  let PageComponent = $derived(pages.get(`./pages/Page${page}.svelte`));
+  let PageComponent = $derived(pages.get(`./pages_lt/Page${page}.svelte`));
 
   function setPage(p: number) {
     window.history.replaceState(null, "", `?p=${p + 1}`);
@@ -33,9 +33,9 @@
     {/each}
   </nav>
   <section class="relative grow-1">
-    <div class="absolute top-12 right-12 bottom-12 left-12 rounded-sm bg-white/25 px-8 pt-20 pb-8">
+    <div class="absolute top-12 right-12 bottom-12 left-12 rounded-sm bg-white/25 px-8 py-20">
       {#key page}
-        <div class="flex h-full flex-col overflow-y-scroll text-center text-3xl font-bold" in:fade>
+        <div class="flex h-full flex-col overflow-y-auto text-center text-3xl font-bold" in:fade>
           <PageComponent />
         </div>
       {/key}

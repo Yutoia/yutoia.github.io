@@ -25,15 +25,15 @@
 </script>
 
 <main class="flex h-svh bg-linear-to-br from-teal-500 to-indigo-500 text-white">
-  <nav class="grid w-20 grid-cols-{pages.size} border-r-4">
-    {#each Array(pages.size) as _, i}
+  <nav class="grid w-20 grid-rows-8 border-r-4">
+    {#each Array(8) as _, i}
       <button onclick={() => setPage(i)} class="text-2xl transition" class:bg-zinc-900={page !== i}>
         {i + 1}
       </button>
     {/each}
   </nav>
   <section class="relative grow-1">
-    <div class="absolute top-12 right-12 bottom-12 left-12 rounded-sm bg-white/25 px-8 py-20">
+    <div class="absolute top-12 right-12 bottom-12 left-12 rounded-sm bg-white/25 px-8 pt-20 pb-8">
       {#key page}
         <div class="flex h-full flex-col overflow-y-scroll text-center text-3xl font-bold" in:fade>
           <PageComponent />

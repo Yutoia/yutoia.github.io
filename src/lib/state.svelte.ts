@@ -1,4 +1,4 @@
-const cookiesCookie = void document.cookie
+const cookiesCookie = document.cookie
   .split("; ")
   .find(row => row.startsWith("cookies="))
   ?.split("=")[1];

@@ -1,4 +1,5 @@
 <script>
+  import CookieButton from "../lib/CookieButton.svelte";
   import Page from "../lib/Page.svelte";
 </script>
 
@@ -11,6 +12,9 @@
       ゲームやスマホアプリも制作することができる
     </li>
     <li class="mt-8">Web開発は時代に合わせて変化する分野である</li>
-    <li class="mt-16">Web開発は楽しい 🎉</li>
+    <li class="mt-16">
+      Web開発は楽しい
+      <CookieButton progress={4} fallback>🎉</CookieButton>
+    </li>
   </ol>
 </Page>

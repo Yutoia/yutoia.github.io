@@ -1,12 +1,22 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
   import { advanceProgress, getCookieProgress } from "./state.svelte";
 
-  interface Props {
+  type Props = {
     progress: number;
     size?: "inherit" | "verysmall" | "small" | "normal" | "big" | "verybig";
-  }
+  } & (
+    | {
+        fallback: true;
+        children: Snippet;
+      }
+    | {
+        fallback?: false;
+        children?: undefined;
+      }
+  );
 
-  const { progress, size = "inherit" }: Props = $props();
+  const { progress, size = "inherit", ...other }: Props = $props();
 </script>
 
 {#if progress === getCookieProgress()}
@@ -21,4 +31,6 @@
   >
     🍪
   </button>
+{:else if other.fallback}
+  {@render other.children()}
 {/if}

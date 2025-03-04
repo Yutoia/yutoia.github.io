@@ -4,5 +4,5 @@
 </script>
 
 <Page>
-  <CookieButton progress={3} size="verybig" />
+  <CookieButton progress={9} size="verybig" fallback>ここには何もないよ</CookieButton>
 </Page>

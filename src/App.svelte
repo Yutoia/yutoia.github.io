@@ -3,7 +3,7 @@
   import { fade } from "svelte/transition";
 
   const pages = new Map<string, Component>(
-    Object.entries(import.meta.glob("./pages_lt/*.svelte", { eager: true, import: "default" })),
+    Object.entries(import.meta.glob("./pages/*.svelte", { eager: true, import: "default" })),
   );
 
   let page = $state(
@@ -16,7 +16,7 @@
       return Number.isFinite(pn) ? pn : 0;
     })(),
   );
-  let PageComponent = $derived(pages.get(`./pages_lt/Page${page}.svelte`));
+  let PageComponent = $derived(pages.get(`./pages/Page${page}.svelte`));
 
   function setPage(p: number) {
     window.history.replaceState(null, "", `?p=${p + 1}`);

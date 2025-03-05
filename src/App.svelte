@@ -25,8 +25,8 @@
 </script>
 
 <main class="flex h-svh bg-linear-to-br from-teal-500 to-indigo-500 text-white">
-  <nav class="grid w-20 grid-rows-8 border-r-4">
-    {#each Array(8) as _, i}
+  <nav class="grid w-20 grid-rows-9 border-r-4">
+    {#each Array(9) as _, i}
       <button onclick={() => setPage(i)} class="text-2xl transition" class:bg-zinc-900={page !== i}>
         {i + 1}
       </button>

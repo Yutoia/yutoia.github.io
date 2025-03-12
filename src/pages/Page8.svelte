@@ -16,4 +16,16 @@
       </p>
     </CookieButton>
   </div>
+  <p class="absolute right-8 bottom-8 text-xl">
+    (ソースコードは
+    <a
+      href="https://github.com/Yutoia/yutoia.github.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-yellow-200"
+    >
+      GitHub
+    </a>
+    にあります！)
+  </p>
 </Page>
